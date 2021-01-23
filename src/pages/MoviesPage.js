@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { getSearchMovies } from '../services/movieApi';
+import { getSearchMovies, } from '../services/movieApi';
+import getQueryParams from '../utils/getQueryString';
+import SearchForm from '../components/SearchForm';
 
 
 export default class MoviesPage extends Component {
@@ -11,8 +13,33 @@ export default class MoviesPage extends Component {
     }
 
     componentDidMount() {
-        getSearchMovies('cat').then(movies =>
+        const { query } = getQueryParams(this.props.location.search);
+        if (query) {
+            this.fetchMovies(query)
+            return;
+        }
+
+    }
+    componentDidUpdate(prevProps, prevState) {
+        const { query: prevQuery } = getQueryParams(prevProps.location.search)
+        const { query: nextQuery } = getQueryParams(this.props.location.search)
+        if (prevQuery !== nextQuery) {
+            this.fetchMovies(nextQuery)
+        }
+    }
+
+    fetchMovies = (fetchQuery) => {
+        getSearchMovies(fetchQuery).then(movies =>
             this.setState({ movies })
+        )
+    }
+
+    handgeChangeQuery = (query) => {
+        this.props.history.push(
+            {
+                pathname: this.props.location.pathname,
+                search: `query=${query}`
+            }
         )
     }
     render() {
@@ -20,13 +47,20 @@ export default class MoviesPage extends Component {
         const { match } = this.props;
         return (
             <div>
-                {movies.length > 0 &&
+                <SearchForm onSubmit={this.handgeChangeQuery} />
+                {
+                    movies.length > 0 &&
                     <ul>
                         {movies.map((mov) => {
-                            return <li key={mov.id}><Link to={`${match.url}/${mov.id}`}>{mov.title}</Link></li>
+                            return <li key={mov.id}>
+                                <Link to={{ pathname: `${match.url}/${mov.id}`, state: { from: this.props.location } }}>
+                                    {mov.title}
+                                </Link>
+                            </li>
                         })}
 
-                    </ul>}
+                    </ul>
+                }
 
             </div>
         )

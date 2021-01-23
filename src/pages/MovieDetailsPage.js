@@ -3,6 +3,7 @@ import { getMovieDetails } from '../services/movieApi';
 import { Route, Link, Switch } from 'react-router-dom';
 import Cast from './innerMovieDetails/Cast';
 import Reviews from './innerMovieDetails/Reviews';
+import routes from '../routes';
 
 export default class MovieDetailsPage extends Component {
     state = {
@@ -15,12 +16,20 @@ export default class MovieDetailsPage extends Component {
                 this.setState({ movie: movie }))
     }
 
+    handleGoBack = () => {
+        const { state } = this.props.location;
+        if (state && state.from) {
+            return this.props.history.push(state.from)
+        }
+        this.props.history.push(routes.movies)
+    }
+
     render() {
         const { movie } = this.state;
         const { match } = this.props;
         return (
             <div>
-
+                <button type="button" onClick={this.handleGoBack}>Go back</button>
                 {this.state.movie &&
                     <>
 
@@ -50,15 +59,3 @@ export default class MovieDetailsPage extends Component {
         )
     }
 }
-
-
-
-
-// import React from 'react'
-
-// const MovieDetailsPage = ({ match }) => {
-//     return (
-//         <div>
-//             <h1>Movie{match.params.movieId}</h1>
-//         </div>
-//     )

@@ -1,8 +1,4 @@
 const key = '157a8dab0fd833a1e20329cd301ddb1e';
-// example https://api.themoviedb.org/3/movie/550?api_key=157a8dab0fd833a1e20329cd301ddb1e
-
-// API Read Access Token(v4 auth)
-// eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTdhOGRhYjBmZDgzM2ExZTIwMzI5Y2QzMDFkZGIxZSIsInN1YiI6IjYwMDllMDMzMTI2ZWMzMDA0MGZlZGY4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wHfUZgcVIbHPtBHiYSz01lUCD - sXP_TBAxeuM9jcoQo
 
 const baseURL = `https://api.themoviedb.org/`
 
@@ -17,7 +13,13 @@ const getMovieDetails = (movieId) => {
         .then(res => res.json())
 }
 
-export { getSearchMovies, getMovieDetails }
+const getPopularList = () => {
+    return fetch(`${baseURL}3/trending/movie/day?api_key=${key}`)
+        .then(res => res.json())
+        .then(data => data.results)
+}
+
+export { getSearchMovies, getMovieDetails, getPopularList }
 // const fetchMovieDetails = movieId => {
 //     return fetch(`${baseURL}`)
 //         .then(res => res.json())
