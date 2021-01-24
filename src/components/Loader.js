@@ -7,7 +7,7 @@ export const Spinner = () => {
 
         <Loader
             type="ThreeDots"
-            color="#3f51b5"
+            color="#51a9fc;"
             height={100}
             width={100}
             timeout={3000} //3 secs

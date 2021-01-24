@@ -6,7 +6,7 @@ const routesPages = [
         name: "Home",
         exact: true,
         component: lazy(() =>
-            import("./pages/HomePage" /* webpackChunkName: "HomePage"*/)
+            import("./pages/homePage/HomePage" /* webpackChunkName: "HomePage"*/)
         )
     },
     {
@@ -26,7 +26,7 @@ const routesDetailPages = [
         exact: false,
         component: lazy(() =>
             import(
-                "./pages/MovieDetailsPage" /* webpackChunkName: "MovieDetailsPage"*/
+                "./pages/movieDetailPage/MovieDetailsPage" /* webpackChunkName: "MovieDetailsPage"*/
             )
         ),
     }

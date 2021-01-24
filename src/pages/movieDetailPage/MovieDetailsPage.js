@@ -1,8 +1,9 @@
 import React, { Component, Suspense } from 'react'
-import { getMovieDetails, imgPoster } from '../services/movieApi';
+import { getMovieDetails, imgPoster } from '../../services/movieApi';
 import { Route, Link, Switch } from 'react-router-dom';
-import { routesInnerPages } from '../routes';
-import { Spinner } from '../components/Loader';
+import { routesInnerPages } from '../../routes';
+import { Spinner } from '../../components/Loader';
+import { DetailsMovieWrapper } from './styledDetailsMovie';
 
 export default class MovieDetailsPage extends Component {
     state = {
@@ -27,17 +28,17 @@ export default class MovieDetailsPage extends Component {
         const { movie } = this.state;
         const { match } = this.props;
         return (
-            <div>
-                <button type="button" onClick={this.handleGoBack}>Go back</button>
+            <DetailsMovieWrapper>
+                <button type="button" onClick={this.handleGoBack} className="detailsMovieButton">Go back</button>
                 {this.state.movie &&
                     <>
 
                         {movie.poster_path && <img scr={imgPoster + movie.poster_path} alt={movie.title} />}
-                        <h1>{movie.title} ({movie.release_date})</h1>
-                        <h2>{movie.popularity}</h2>
-                        <p>{movie.tagline}</p>
-                        <p>{movie.overview}</p>
-                        <p>{movie.runtime}</p>
+                        <h1 className="detailsMovieTitle">{movie.title} ({movie.release_date})</h1>
+                        <h2 className="detailsPopularity">Popularity: {movie.popularity}</h2>
+                        <p className="detailsTagline">{movie.tagline}</p>
+                        <p className="detailsOverView">{movie.overview}</p>
+                        <p className="detailsRuntime">Runtime: {movie.runtime}</p>
 
                         <p>Additional information</p>
                         <Link to={`${match.url}/${movie.id}/cast`}>
@@ -55,7 +56,7 @@ export default class MovieDetailsPage extends Component {
                         ))}
                     </Switch>
                 </Suspense>
-            </div >
+            </DetailsMovieWrapper >
         )
     }
 }
