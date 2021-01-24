@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { getPopularList } from '../services/movieApi';
+import { getPopularList, imgPoster } from '../services/movieApi';
 
 export default class HomePage extends Component {
     state = {
@@ -8,9 +8,10 @@ export default class HomePage extends Component {
     }
     componentDidMount() {
         getPopularList()
-            .then(popularDayMovies => {
-                this.setState({ popularDayMovies })
-            })
+            .then(
+                popularDayMovies => {
+                    this.setState({ popularDayMovies })
+                })
 
     }
 
@@ -22,12 +23,18 @@ export default class HomePage extends Component {
                 <ul>
                     {popularDayMovies.map((popMovie) => (
                         <li key={popMovie.id}>
+                            {popMovie.profile_path && (
+                                <img
+                                    src={imgPoster + popMovie.poster_path}
+                                    alt={popMovie.title}
+                                />
+                            )}
                             <Link to={{ pathname: `/movies/${popMovie.id}` }}>
+
                                 {popMovie.title} ({popMovie.release_date})
+
                             </Link>
-                            {/* <h2>{popMovie.title} ({popMovie.release_date})</h2>
-                            <h3>Rating: {popMovie.vote_count}</h3>
-                            <p>{popMovie.overview}</p> */}
+
                         </li>
                     ))}
                 </ul>

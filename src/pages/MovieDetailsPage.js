@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import { getMovieDetails } from '../services/movieApi';
+import React, { Component, Suspense } from 'react'
+import { getMovieDetails, imgPoster } from '../services/movieApi';
 import { Route, Link, Switch } from 'react-router-dom';
-import Cast from './innerMovieDetails/Cast';
-import Reviews from './innerMovieDetails/Reviews';
-import routes from '../routes';
+import { routesInnerPages } from '../routes';
+import { Spinner } from '../components/Loader';
 
 export default class MovieDetailsPage extends Component {
     state = {
@@ -21,7 +20,7 @@ export default class MovieDetailsPage extends Component {
         if (state && state.from) {
             return this.props.history.push(state.from)
         }
-        this.props.history.push(routes.movies)
+        this.props.history.push("/")
     }
 
     render() {
@@ -33,14 +32,12 @@ export default class MovieDetailsPage extends Component {
                 {this.state.movie &&
                     <>
 
-                        {/* <img scr={movie.poster_path} alt={movie.title} /> */}
+                        {movie.poster_path && <img scr={imgPoster + movie.poster_path} alt={movie.title} />}
                         <h1>{movie.title} ({movie.release_date})</h1>
                         <h2>{movie.popularity}</h2>
                         <p>{movie.tagline}</p>
                         <p>{movie.overview}</p>
                         <p>{movie.runtime}</p>
-
-
 
                         <p>Additional information</p>
                         <Link to={`${match.url}/${movie.id}/cast`}>
@@ -51,10 +48,13 @@ export default class MovieDetailsPage extends Component {
                             Reviews
                     </Link>
                     </>}
-                <Switch>
-                    <Route path={`${match.path}/:movieId/cast`} component={Cast} />
-                    <Route path={`${match.path}/:movieId/reviews`} component={Reviews} />
-                </Switch>
+                <Suspense fallback={<Spinner />}>
+                    <Switch>
+                        {routesInnerPages.map(({ path, exact, component }) => (
+                            <Route key={path} exact={exact} path={match.path + path} component={component} />
+                        ))}
+                    </Switch>
+                </Suspense>
             </div >
         )
     }

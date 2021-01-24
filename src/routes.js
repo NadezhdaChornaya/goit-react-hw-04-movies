@@ -1,5 +1,60 @@
-export default {
-    home: '/',
-    movies: '/movies',
-    movieDetails: '/movies/:movieId'
-}
+import { lazy } from "react";
+
+const routesPages = [
+    {
+        path: "/",
+        name: "Home",
+        exact: true,
+        component: lazy(() =>
+            import("./pages/HomePage" /* webpackChunkName: "HomePage"*/)
+        )
+    },
+    {
+        path: "/movies",
+        name: "Movies",
+        exact: true,
+        component: lazy(() =>
+            import("./pages/MoviesPage" /* webpackChunkName: "MoviesPage"*/)
+        )
+    },
+]
+
+const routesDetailPages = [
+    {
+        path: "/movies/:movieId",
+        name: "MovieDetailsPage",
+        exact: false,
+        component: lazy(() =>
+            import(
+                "./pages/MovieDetailsPage" /* webpackChunkName: "MovieDetailsPage"*/
+            )
+        ),
+    }
+]
+
+const routesInnerPages = [
+    {
+        path: "/:movieId/cast",
+        name: "Cast",
+        exact: false,
+        component: lazy(() =>
+            import(
+                "./pages/innerMovieDetails/Cast" /* webpackChunkName: "Cast"*/
+            )
+        ),
+    },
+    {
+        path: "/:movieId/reviews",
+        name: "Reviews",
+        exact: false,
+        component: lazy(() =>
+            import(
+                "./pages/innerMovieDetails/Reviews" /* webpackChunkName: "Reviews"*/
+            )
+        ),
+    },
+];
+
+
+export { routesPages, routesDetailPages, routesInnerPages }
+

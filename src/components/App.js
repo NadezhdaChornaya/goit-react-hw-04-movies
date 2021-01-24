@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import MoviesPage from '../pages/MoviesPage';
 import NotFound from '../pages/NotFound';
-import MovieDetailsPage from '../pages/MovieDetailsPage';
-import routes from '../routes';
+import { routesPages, routesDetailPages } from '../routes';
 import Layout from './Layout';
-// import Layout from ''
+import { Spinner } from './Loader';
 
 
 
 const App = () => (
     <>
         <Layout>
-            <Switch>
-                <Route path={routes.home} exact component={HomePage} />
-                <Route path={routes.movies} exact component={MoviesPage} />
-                <Route path={routes.movieDetails} component={MovieDetailsPage} />
-                <Route component={NotFound} />
-            </Switch>
+            <Suspense fallback={<Spinner />}>
+                <Switch>
+                    {routesPages.map(route => (
+                        <Route key={route.path} {...route} />
+                    ))}
+                    {routesDetailPages.map(route => (
+                        <Route key={route.path} {...route} />
+                    ))}
+                    <Route component={NotFound} />
+                </Switch>
+            </Suspense>
         </Layout>
     </>
 );

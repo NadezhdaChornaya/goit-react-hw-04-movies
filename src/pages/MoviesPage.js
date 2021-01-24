@@ -8,8 +8,8 @@ import SearchForm from '../components/SearchForm';
 export default class MoviesPage extends Component {
     state = {
         movies: [],
-        searchQuery: '',
         page: 1,
+        loading: false,
     }
 
     componentDidMount() {
@@ -29,9 +29,12 @@ export default class MoviesPage extends Component {
     }
 
     fetchMovies = (fetchQuery) => {
-        getSearchMovies(fetchQuery).then(movies =>
-            this.setState({ movies })
-        )
+        // this.setState((prevState) => ({ ...prevState, loading: true }))
+        getSearchMovies(fetchQuery)
+            .then(movies =>
+                this.setState({ movies }))
+            .catch(error => alert(error))
+        // .finally(() => this.setState((prevState) => ({ ...prevState, loading: false })))
     }
 
     handgeChangeQuery = (query) => {
@@ -67,15 +70,3 @@ export default class MoviesPage extends Component {
     }
 }
 
-
-// const movie = [
-//     { id: 1, name: 'fffff' },
-//     { id: 2, name: 'gggggg' },
-// ]
-
-// const MoviesPage = ({ match }) => {
-//     return (
-
-//     )
-// }
-// export default MoviesPage

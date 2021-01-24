@@ -32,5 +32,6 @@ const getMovieReviews = (movieId) => {
 }
 
 const imgCast = 'https://image.tmdb.org/t/p/w185';
+const imgPoster = 'https://image.tmdb.org/t/p/w385';
 
-export { getSearchMovies, getMovieDetails, getPopularList, getCast, getMovieReviews, imgCast }
+export { getSearchMovies, getMovieDetails, getPopularList, getCast, getMovieReviews, imgCast, imgPoster }
