@@ -9,8 +9,6 @@ import { Ul } from './styledMoviePages';
 export default class MoviesPage extends Component {
     state = {
         movies: [],
-        page: 1,
-        loading: false,
     }
 
     componentDidMount() {
@@ -25,17 +23,19 @@ export default class MoviesPage extends Component {
         const { query: prevQuery } = getQueryParams(prevProps.location.search)
         const { query: nextQuery } = getQueryParams(this.props.location.search)
         if (prevQuery !== nextQuery) {
-            this.fetchMovies(nextQuery)
+            return this.fetchMovies(nextQuery)
+        }
+        if (this.state.movies.length === 0) {
+            alert('Try another request')
         }
     }
 
     fetchMovies = (fetchQuery) => {
-        // this.setState((prevState) => ({ ...prevState, loading: true }))
         getSearchMovies(fetchQuery)
             .then(movies =>
                 this.setState({ movies }))
             .catch(error => alert(error))
-        // .finally(() => this.setState((prevState) => ({ ...prevState, loading: false })))
+
     }
 
     handgeChangeQuery = (query) => {

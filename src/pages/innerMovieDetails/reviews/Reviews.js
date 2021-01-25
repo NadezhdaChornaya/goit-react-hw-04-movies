@@ -26,8 +26,9 @@ export default class Reviews extends Component {
             <ReviewsWrapper>
                 <h1 className="reviewTitle">Reviews</h1>
 
-                {reviews.lengs>0 ?
-                    (<ul className="reviewList">
+                {(reviews.length === 0 && <h2 className="reviewText">We don't have any reviews for this movie</h2>)}
+
+                <ul className="reviewList">
                     {reviews.map((review) => (
                         <li key={review.id} className="reviewItem">
                             <h2 className="reviewAuthor">Author: {review.author}</h2>
@@ -36,10 +37,7 @@ export default class Reviews extends Component {
                         </li>
                     ))}
                 </ul>
-                    )
-                : (
-        <p className="reviewText"> We don't have any reviews for this movie.</p>
-      )}
+
 
             </ReviewsWrapper >
         )

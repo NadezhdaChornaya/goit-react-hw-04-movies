@@ -33,6 +33,9 @@ font: inherit;
     margin-right: 20px;
 }
 .navigationTitle{
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
      color: transparent;
      -webkit-text-stroke: 1px #fafc6d;
      text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #ffffff;

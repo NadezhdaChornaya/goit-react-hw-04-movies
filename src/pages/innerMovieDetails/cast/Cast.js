@@ -24,24 +24,24 @@ export default class Cast extends Component {
         return (
             <CastWrapper>
                 <h1 className="castTitle">Cast</h1>
-                {castMovie.lengs > 0 ?
-                    (<ul className="castList">
-                        {castMovie && castMovie.cast && castMovie.cast.map((actorInfo) => (
-                            <li key={actorInfo.id} className="castItem">
-                                {actorInfo.profile_path && (
-                                    <img
-                                        src={imgCast + actorInfo.profile_path}
-                                        alt={actorInfo.name}
-                                    />
-                                )}
-                                <h3 className="castName">{actorInfo.name}</h3>
-                                <p className="castCharacter">The character: {actorInfo.character}</p>
-                            </li>
-                        )
-                        )}
-                    </ul>) : (
-                        <p className="castText"> We don't have any info about actors for this movie.</p>
-                )}
+                {castMovie.length === 0 && (<h2 className="castText">We don't have any info about actors for this movie</h2>)}
+
+                <ul className="castList">
+                    {castMovie && castMovie.cast && castMovie.cast.map((actorInfo) => (
+                        <li key={actorInfo.id} className="castItem">
+                            {actorInfo.profile_path && (
+                                <img
+                                    src={imgCast + actorInfo.profile_path}
+                                    alt={actorInfo.name}
+                                />
+                            )}
+                            <h3 className="castName">{actorInfo.name}</h3>
+                            <p className="castCharacter">The character: {actorInfo.character}</p>
+                        </li>
+                    )
+                    )}
+                </ul>
+
 
             </CastWrapper>
         )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { routesPages } from '../../routes';
 import { NavigationWrapper } from './styledNavigation';
 // import sprite from "../../img/sptite.svg"
@@ -12,7 +12,7 @@ const Navigation = () => {
             {/* <svg >
                 <use href="#icon-video-camera" />
             </svg> */}
-            <h1 className="navigationTitle"><span>&#127916;</span>The Best Movies<span>&#127916;</span></h1>
+            <Link to="/" className="navigationTitle"><span>&#127916;</span>The Best Movies<span>&#127916;</span></Link>
             <ul className="navigationList">
                 {routesPages.map(({ path, name, exact }) => (
                     <li key={path} className="navigationItem">

@@ -53,4 +53,224 @@ Deploying to main site URL...
 [32mLogs: [39m             https://app.netlify.com/sites/cnd-movie-netlify/deploys/600ee3230590d27b421bc51d
 [32mUnique Deploy URL: [39mhttps://600ee3230590d27b421bc51d--cnd-movie-netlify.netlify.app
 [32mWebsite URL: [39m      https://cnd-movie-netlify.netlify.app
+[?25hbash-3.2$ npm run deploy
+
+> goit-react-hw-04-movies@0.1.0 predeploy /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> npm run build
+
+
+> goit-react-hw-04-movies@0.1.0 build /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> react-scripts build
+
+Creating an optimized production build...
+[32mCompiled successfully.[39m
+[32m[39m
+File sizes after gzip:
+
+  66.52 KB         [2mbuild/static/js/[22m[36m7.015ba8d3.chunk.js[39m
+  3.14 KB          [2mbuild/static/js/[22m[36mMoviesPage.0e0b1a85.chunk.js[39m
+  2.63 KB          [2mbuild/static/js/[22m[36mMovieDetailsPage.deadddd7.chunk.js[39m
+  2.04 KB          [2mbuild/static/js/[22m[36mHomePage.44995f84.chunk.js[39m
+  1.93 KB ([33m+74 B[39m)  [2mbuild/static/js/[22m[36mCast.19e99fe5.chunk.js[39m
+  1.89 KB          [2mbuild/static/js/[22m[36mReviews.9d871b8e.chunk.js[39m
+  1.26 KB          [2mbuild/static/js/[22m[36mmain.976c831b.chunk.js[39m
+  1.26 KB ([32m-1 B[39m)   [2mbuild/static/js/[22m[36mruntime-main.f3dd2c22.js[39m
+  765 B            [2mbuild/static/css/[22m[36m7.0f52be0d.chunk.css[39m
+  336 B            [2mbuild/static/css/[22m[36mmain.053cc4e1.chunk.css[39m
+
+The project was built assuming it is hosted at [32m/[39m.
+You can control this with the [32mhomepage[39m field in your [36mpackage.json[39m.
+
+The [36mbuild[39m folder is ready to be deployed.
+You may serve it with a static server:
+
+  [36mnpm[39m install -g serve
+  [36mserve[39m -s build
+
+Find out more about deployment here:
+
+  [33mhttps://cra.link/deployment[39m
+
+
+> goit-react-hw-04-movies@0.1.0 deploy /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> netlify deploy -p
+
+[32mDeploy path: [39m       /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies/build
+[32mConfiguration path: [39m/Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies/netlify.toml
+Deploying to main site URL...
+[?25l[36m⧇[39m Hashing files...[2K[1G[36m⧆[39m Hashing files...[2K[1G[36m⧇[39m Hashing files...[2K[1G[36m⧆[39m Hashing files...[2K[1G[36m⧇[39m Hashing files...[2K[1G[36m⧆[39m Hashing static/js/Cast.19e99fe5.chunk.js[2K[1G[?25h[32m✔[39m Finished hashing 24 files
+[?25l[36m▮[39m CDN diffing files...[2K[1G[36m▯[39m CDN diffing files...[2K[1G[36m▮[39m CDN diffing files...[2K[1G[36m▯[39m CDN diffing files...[2K[1G[?25h[32m✔[39m CDN requesting 6 files
+[?25l[36m😄 [39m Uploading 6 files[2K[1G[36m😝 [39m (4/6) Uploading index.html...[2K[1G[36m😄 [39m (5/6) Uploading asset-manifest.json...[2K[1G[36m😝 [39m (5/6) Uploading asset-manifest.json...[2K[1G[36m😄 [39m (5/6) Uploading asset-manifest.json...[2K[1G[36m😝 [39m (5/6) Uploading asset-manifest.json...[2K[1G[36m😄 [39m (5/6) Uploading asset-manifest.json...[2K[1G[?25h[32m✔[39m Finished uploading 6 assets
+[?25l[36m⠀[39m Waiting for deploy to go live...[2K[1G[36m⠁[39m Waiting for deploy to go live...[2K[1G[36m⠂[39m Waiting for deploy to go live...[2K[1G[36m⠃[39m Waiting for deploy to go live...[2K[1G[36m⠄[39m Waiting for deploy to go live...[2K[1G[36m⠅[39m Waiting for deploy to go live...[2K[1G[36m⠆[39m Waiting for deploy to go live...[2K[1G[36m⠇[39m Waiting for deploy to go live...[2K[1G[36m⡀[39m Waiting for deploy to go live...[2K[1G[36m⡁[39m Waiting for deploy to go live...[2K[1G[36m⡂[39m Waiting for deploy to go live...[2K[1G[36m⡃[39m Waiting for deploy to go live...[2K[1G[36m⡄[39m Waiting for deploy to go live...[2K[1G[36m⡅[39m Waiting for deploy to go live...[2K[1G[36m⡆[39m Waiting for deploy to go live...[2K[1G[36m⡇[39m Waiting for deploy to go live...[2K[1G[36m⠈[39m Waiting for deploy to go live...[2K[1G[36m⠉[39m Waiting for deploy to go live...[2K[1G[36m⠊[39m Waiting for deploy to go live...[2K[1G[36m⠋[39m Waiting for deploy to go live...[2K[1G[?25h[32m✔[39m Deploy is live!
+
+[32mLogs: [39m             https://app.netlify.com/sites/cnd-movie-netlify/deploys/600ee4c65e57f1ffb45b2e9b
+[32mUnique Deploy URL: [39mhttps://600ee4c65e57f1ffb45b2e9b--cnd-movie-netlify.netlify.app
+[32mWebsite URL: [39m      https://cnd-movie-netlify.netlify.app
+[?25hbash-3.2$ npm run deploy
+
+> goit-react-hw-04-movies@0.1.0 predeploy /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> npm run build
+
+
+> goit-react-hw-04-movies@0.1.0 build /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> react-scripts build
+
+Creating an optimized production build...
+[32mCompiled successfully.[39m
+[32m[39m
+File sizes after gzip:
+
+  66.52 KB         [2mbuild/static/js/[22m[36m7.015ba8d3.chunk.js[39m
+  3.14 KB          [2mbuild/static/js/[22m[36mMoviesPage.0e0b1a85.chunk.js[39m
+  2.63 KB          [2mbuild/static/js/[22m[36mMovieDetailsPage.deadddd7.chunk.js[39m
+  2.04 KB          [2mbuild/static/js/[22m[36mHomePage.44995f84.chunk.js[39m
+  1.89 KB          [2mbuild/static/js/[22m[36mReviews.9d871b8e.chunk.js[39m
+  1.87 KB ([32m-55 B[39m)  [2mbuild/static/js/[22m[36mCast.3d4d205b.chunk.js[39m
+  1.26 KB          [2mbuild/static/js/[22m[36mmain.976c831b.chunk.js[39m
+  1.26 KB ([33m+1 B[39m)   [2mbuild/static/js/[22m[36mruntime-main.1e647522.js[39m
+  765 B            [2mbuild/static/css/[22m[36m7.0f52be0d.chunk.css[39m
+  336 B            [2mbuild/static/css/[22m[36mmain.053cc4e1.chunk.css[39m
+
+The project was built assuming it is hosted at [32m/[39m.
+You can control this with the [32mhomepage[39m field in your [36mpackage.json[39m.
+
+The [36mbuild[39m folder is ready to be deployed.
+You may serve it with a static server:
+
+  [36mnpm[39m install -g serve
+  [36mserve[39m -s build
+
+Find out more about deployment here:
+
+  [33mhttps://cra.link/deployment[39m
+
+
+> goit-react-hw-04-movies@0.1.0 deploy /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> netlify deploy -p
+
+[32mDeploy path: [39m       /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies/build
+[32mConfiguration path: [39m/Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies/netlify.toml
+Deploying to main site URL...
+[?25l[36m⢀⠀[39m Hashing files...[2K[1G[36m⡀⠀[39m Hashing files...[2K[1G[?25h[32m✔[39m Finished hashing 24 files
+[?25l[36m⠈[39m CDN diffing files...[2K[1G[36m⠉[39m CDN diffing files...[2K[1G[36m⠋[39m CDN diffing files...[2K[1G[36m⠓[39m CDN diffing files...[2K[1G[?25h[32m✔[39m CDN requesting 6 files
+[?25l[36m🌲[39m Uploading 6 files[2K[1G[36m🎄[39m (4/6) Uploading index.html...[2K[1G[36m🌲[39m (5/6) Uploading asset-manifest.json...[2K[1G[36m🎄[39m (5/6) Uploading asset-manifest.json...[2K[1G[?25h[32m✔[39m Finished uploading 6 assets
+[?25l[36m+[39m Waiting for deploy to go live...[2K[1G[36mx[39m Waiting for deploy to go live...[2K[1G[36m*[39m Waiting for deploy to go live...[2K[1G[36m+[39m Waiting for deploy to go live...[2K[1G[36mx[39m Waiting for deploy to go live...[2K[1G[36m*[39m Waiting for deploy to go live...[2K[1G[36m+[39m Waiting for deploy to go live...[2K[1G[36mx[39m Waiting for deploy to go live...[2K[1G[36m*[39m Waiting for deploy to go live...[2K[1G[36m+[39m Waiting for deploy to go live...[2K[1G[36mx[39m Waiting for deploy to go live...[2K[1G[36m*[39m Waiting for deploy to go live...[2K[1G[36m+[39m Waiting for deploy to go live...[2K[1G[36mx[39m Waiting for deploy to go live...[2K[1G[36m*[39m Waiting for deploy to go live...[2K[1G[36m+[39m Waiting for deploy to go live...[2K[1G[36mx[39m Waiting for deploy to go live...[2K[1G[36m*[39m Waiting for deploy to go live...[2K[1G[36m+[39m Waiting for deploy to go live...[2K[1G[36mx[39m Waiting for deploy to go live...[2K[1G[?25h[32m✔[39m Deploy is live!
+
+[32mLogs: [39m             https://app.netlify.com/sites/cnd-movie-netlify/deploys/600ee626df37f002c6757adf
+[32mUnique Deploy URL: [39mhttps://600ee626df37f002c6757adf--cnd-movie-netlify.netlify.app
+[32mWebsite URL: [39m      https://cnd-movie-netlify.netlify.app
+[?25hbash-3.2$ npm run deploy
+
+> goit-react-hw-04-movies@0.1.0 predeploy /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> npm run build
+
+
+> goit-react-hw-04-movies@0.1.0 build /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> react-scripts build
+
+Creating an optimized production build...
+[32mCompiled successfully.[39m
+[32m[39m
+File sizes after gzip:
+
+  66.52 KB         [2mbuild/static/js/[22m[36m7.015ba8d3.chunk.js[39m
+  3.14 KB          [2mbuild/static/js/[22m[36mMoviesPage.0e0b1a85.chunk.js[39m
+  2.63 KB          [2mbuild/static/js/[22m[36mMovieDetailsPage.deadddd7.chunk.js[39m
+  2.04 KB          [2mbuild/static/js/[22m[36mHomePage.44995f84.chunk.js[39m
+  1.87 KB          [2mbuild/static/js/[22m[36mCast.3d4d205b.chunk.js[39m
+  1.85 KB ([32m-43 B[39m)  [2mbuild/static/js/[22m[36mReviews.fd7fc791.chunk.js[39m
+  1.26 KB          [2mbuild/static/js/[22m[36mmain.976c831b.chunk.js[39m
+  1.26 KB ([32m-1 B[39m)   [2mbuild/static/js/[22m[36mruntime-main.edb7cdf3.js[39m
+  765 B            [2mbuild/static/css/[22m[36m7.0f52be0d.chunk.css[39m
+  336 B            [2mbuild/static/css/[22m[36mmain.053cc4e1.chunk.css[39m
+
+The project was built assuming it is hosted at [32m/[39m.
+You can control this with the [32mhomepage[39m field in your [36mpackage.json[39m.
+
+The [36mbuild[39m folder is ready to be deployed.
+You may serve it with a static server:
+
+  [36mnpm[39m install -g serve
+  [36mserve[39m -s build
+
+Find out more about deployment here:
+
+  [33mhttps://cra.link/deployment[39m
+
+
+> goit-react-hw-04-movies@0.1.0 deploy /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> netlify deploy -p
+
+[32mDeploy path: [39m       /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies/build
+[32mConfiguration path: [39m/Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies/netlify.toml
+Deploying to main site URL...
+[?25l[36m⦾[39m Hashing files...[2K[1G[36m⦿[39m Hashing files...[2K[1G[36m⦾[39m Hashing files...[2K[1G[?25h[32m✔[39m Finished hashing 24 files
+[?25l[36m🙈 [39m CDN diffing files...[2K[1G[36m🙈 [39m CDN diffing files...[2K[1G[?25h[32m✔[39m CDN requesting 6 files
+[?25l [33m›[39m   Warning: 
+ [33m›[39m   {}
+ [33m›[39m
+    TypeError: Cannot read property '0' of undefined
+[?25h[37;40mnpm[0m [0m[31;40mERR![0m [0m[35mcode[0m ELIFECYCLE
+[0m[37;40mnpm[0m [0m[31;40mERR![0m [0m[35merrno[0m 2
+[0m[37;40mnpm[0m [0m[31;40mERR![0m[35m[0m goit-react-hw-04-movies@0.1.0 deploy: `netlify deploy -p`
+[0m[37;40mnpm[0m [0m[31;40mERR![0m[35m[0m Exit status 2
+[0m[37;40mnpm[0m [0m[31;40mERR![0m[35m[0m 
+[0m[37;40mnpm[0m [0m[31;40mERR![0m[35m[0m Failed at the goit-react-hw-04-movies@0.1.0 deploy script.
+[0m[37;40mnpm[0m [0m[31;40mERR![0m[35m[0m This is probably not a problem with npm. There is likely additional logging output above.
+[0m
+[37;40mnpm[0m [0m[31;40mERR![0m[35m[0m A complete log of this run can be found in:
+[0m[37;40mnpm[0m [0m[31;40mERR![0m[35m[0m     /Users/nadezdachornaja/.npm/_logs/2021-01-25T15_42_07_546Z-debug.log
+[0mbash-3.2$ npm run deploy
+
+> goit-react-hw-04-movies@0.1.0 predeploy /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> npm run build
+
+
+> goit-react-hw-04-movies@0.1.0 build /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> react-scripts build
+
+Creating an optimized production build...
+[32mCompiled successfully.[39m
+[32m[39m
+File sizes after gzip:
+
+  66.52 KB  [2mbuild/static/js/[22m[36m7.015ba8d3.chunk.js[39m
+  3.14 KB   [2mbuild/static/js/[22m[36mMoviesPage.0e0b1a85.chunk.js[39m
+  2.63 KB   [2mbuild/static/js/[22m[36mMovieDetailsPage.deadddd7.chunk.js[39m
+  2.04 KB   [2mbuild/static/js/[22m[36mHomePage.44995f84.chunk.js[39m
+  1.87 KB   [2mbuild/static/js/[22m[36mCast.3d4d205b.chunk.js[39m
+  1.85 KB   [2mbuild/static/js/[22m[36mReviews.fd7fc791.chunk.js[39m
+  1.26 KB   [2mbuild/static/js/[22m[36mmain.976c831b.chunk.js[39m
+  1.26 KB   [2mbuild/static/js/[22m[36mruntime-main.edb7cdf3.js[39m
+  765 B     [2mbuild/static/css/[22m[36m7.0f52be0d.chunk.css[39m
+  336 B     [2mbuild/static/css/[22m[36mmain.053cc4e1.chunk.css[39m
+
+The project was built assuming it is hosted at [32m/[39m.
+You can control this with the [32mhomepage[39m field in your [36mpackage.json[39m.
+
+The [36mbuild[39m folder is ready to be deployed.
+You may serve it with a static server:
+
+  [36mnpm[39m install -g serve
+  [36mserve[39m -s build
+
+Find out more about deployment here:
+
+  [33mhttps://cra.link/deployment[39m
+
+
+> goit-react-hw-04-movies@0.1.0 deploy /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies
+> netlify deploy -p
+
+[32mDeploy path: [39m       /Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies/build
+[32mConfiguration path: [39m/Users/nadezdachornaja/Documents/git/home_work/react/goit-react-hw-04-movies/netlify.toml
+Deploying to main site URL...
+[?25l[36m㊂[39m Hashing files...[2K[1G[36m㊀[39m Hashing files...[2K[1G[?25h[32m✔[39m Finished hashing 24 files
+[?25l[36m🌑 [39m CDN diffing files...[2K[1G[36m🌒 [39m CDN diffing files...[2K[1G[36m🌓 [39m CDN diffing files...[2K[1G[36m🌔 [39m CDN diffing files...[2K[1G[36m🌕 [39m CDN diffing files...[2K[1G[36m🌖 [39m CDN diffing files...[2K[1G[36m🌗 [39m CDN diffing files...[2K[1G[?25h[32m✔[39m CDN requesting 6 files
+[?25l[36m▫[39m Uploading 6 files[2K[1G[36m▪[39m (4/6) Uploading index.html...[2K[1G[36m▫[39m (4/6) Uploading index.html...[2K[1G[36m▪[39m (4/6) Uploading index.html...[2K[1G[36m▫[39m (4/6) Uploading index.html...[2K[1G[36m▪[39m (5/6) Uploading asset-manifest.json...[2K[1G[36m▫[39m (5/6) Uploading asset-manifest.json...[2K[1G[36m▪[39m (5/6) Uploading asset-manifest.json...[2K[1G[36m▫[39m (5/6) Uploading asset-manifest.json...[2K[1G[36m▪[39m (5/6) Uploading asset-manifest.json...[2K[1G[?25h[32m✔[39m Finished uploading 6 assets
+[?25l[36m☀️ [39m Waiting for deploy to go live...[2K[1G[36m☀️ [39m Waiting for deploy to go live...[2K[1G[36m☀️ [39m Waiting for deploy to go live...[2K[1G[36m🌤 [39m Waiting for deploy to go live...[2K[1G[36m⛅️ [39m Waiting for deploy to go live...[2K[1G[36m🌥 [39m Waiting for deploy to go live...[2K[1G[36m☁️ [39m Waiting for deploy to go live...[2K[1G[36m🌧 [39m Waiting for deploy to go live...[2K[1G[36m🌨 [39m Waiting for deploy to go live...[2K[1G[36m🌧 [39m Waiting for deploy to go live...[2K[1G[36m🌨 [39m Waiting for deploy to go live...[2K[1G[36m🌧 [39m Waiting for deploy to go live...[2K[1G[36m🌨 [39m Waiting for deploy to go live...[2K[1G[36m⛈ [39m Waiting for deploy to go live...[2K[1G[36m🌨 [39m Waiting for deploy to go live...[2K[1G[36m🌧 [39m Waiting for deploy to go live...[2K[1G[?25h[32m✔[39m Deploy is live!
+
+[32mLogs: [39m             https://app.netlify.com/sites/cnd-movie-netlify/deploys/600ee7035dcdea0bd6953926
+[32mUnique Deploy URL: [39mhttps://600ee7035dcdea0bd6953926--cnd-movie-netlify.netlify.app
+[32mWebsite URL: [39m      https://cnd-movie-netlify.netlify.app
 [?25hbash-3.2$ 
