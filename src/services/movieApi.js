@@ -22,16 +22,14 @@ const getPopularList = () => {
 const getCast = (movieId) => {
     return fetch(`${baseURL}3/movie/${movieId}/credits?api_key=${key}&language=en-US`)
         .then(res => res.json())
-    // .then(data => data.results)
 }
 
 const getMovieReviews = (movieId) => {
     return fetch(`${baseURL}3/movie/${movieId}/reviews?api_key=${key}&language=en-US&page=1`)
         .then(res => res.json())
-    // .then(data => data.results)
 }
 
-const imgCast = 'https://image.tmdb.org/t/p/w185';
-const imgPoster = 'https://image.tmdb.org/t/p/w385';
+const imgCast = 'https://image.tmdb.org/t/p/w300';
+const imgPoster = 'https://image.tmdb.org/t/p/w500';
 
 export { getSearchMovies, getMovieDetails, getPopularList, getCast, getMovieReviews, imgCast, imgPoster }

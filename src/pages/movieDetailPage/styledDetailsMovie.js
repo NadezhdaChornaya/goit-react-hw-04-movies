@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 
 export const DetailsMovieWrapper = styled.div`
-padding: 30px;
+/* padding:-30px; */
 .detailsMovieButton{
     display: block;
-    margin:0 auto;
+    margin:20px auto;
 	width: 300px;
     height: 70px;
     padding: 5px 10px; 
@@ -23,6 +23,15 @@ padding: 30px;
         background-color:#fafc6d;
         text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #ffffff;
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);}
+    }
+    .detailsMovieBlock{
+        width: 80vw;
+        margin: 20px auto;
+        border: 1px solid #fafc6d;
+        box-shadow: 0 0 10px #ffffff;
+    }
+    .detailsMoviePoster{
+        text-align: center;
     }
     .detailsMovieTitle{
         text-align: center;
@@ -43,5 +52,29 @@ padding: 30px;
     font-size: 20px;
     font-weight: 300;
     color: #ffffff;
+    }
+    .moreDetailsWrapper{
+        padding: 30px;
+        background-color:#301d6b;
+    }
+
+    .moreDetailsTitle{
+    font-weight: 500;
+    font-size: 20px;
+    color: #fafc6d;
+    text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #51a9fc;
+    }
+
+    .moreDetailsLink{
+        color: #51a9fc;
+        font-size: 20px;
+        text-decoration: none;
+        &:hover,&:focus{
+        color: #ffffff;
+        text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #ffffff;
+    }
+    }
+    .moreDetailsLink:not(:last-child){
+        margin-right: 30px;
     }
 `

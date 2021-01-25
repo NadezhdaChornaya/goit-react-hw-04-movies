@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { getCast, imgCast } from '../../services/movieApi'
+import { getCast, imgCast } from '../../../services/movieApi'
+import { CastWrapper } from './styledCast';
 
 export default class Cast extends Component {
     state = {
@@ -21,19 +22,19 @@ export default class Cast extends Component {
     render() {
         const { castMovie } = this.state;
         return (
-            <div>
-                <h1>Cast</h1>
-                <ul>
+            <CastWrapper>
+                <h1 className="castTitle">Cast</h1>
+                <ul className="castList">
                     {castMovie && castMovie.cast && castMovie.cast.map((actorInfo) => (
-                        <li key={actorInfo.id}>
+                        <li key={actorInfo.id} className="castItem">
                             {actorInfo.profile_path && (
                                 <img
                                     src={imgCast + actorInfo.profile_path}
                                     alt={actorInfo.name}
                                 />
                             )}
-                            <h3>{actorInfo.name}</h3>
-                            <p>The character: {actorInfo.character}</p>
+                            <h3 className="castName">{actorInfo.name}</h3>
+                            <p className="castCharacter">The character: {actorInfo.character}</p>
                         </li>
                     )
                     )}
@@ -47,7 +48,7 @@ export default class Cast extends Component {
                         </li>
                     ))}
                 </ul> */}
-            </div>
+            </CastWrapper>
         )
     }
 }

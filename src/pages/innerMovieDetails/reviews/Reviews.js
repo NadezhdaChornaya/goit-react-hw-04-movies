@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { getMovieReviews } from '../../services/movieApi';
+import { getMovieReviews } from '../../../services/movieApi';
+import { ReviewsWrapper } from './styledReviews';
 
 export default class Reviews extends Component {
     state = {
@@ -23,8 +24,8 @@ export default class Reviews extends Component {
     render() {
         const { reviews } = this.state;
         return (
-            <div>
-                <h1>Reviews</h1>
+            <ReviewsWrapper>
+                <h1 className="reviewTitle">Reviews</h1>
 
                 {reviews.length > 0 && reviews.result.length > 0 ?
                     (<ul>
@@ -37,10 +38,10 @@ export default class Reviews extends Component {
                     ))}
                     </ul>
                     ) :(
-        <p> We don't have any reviews for this movie.</p>
+        <p className="reviewText"> We don't have any reviews for this movie.</p>
       )}
 
-            </div >
+            </ReviewsWrapper >
         )
     }
 }

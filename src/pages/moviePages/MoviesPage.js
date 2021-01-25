@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { getSearchMovies, } from '../services/movieApi';
-import getQueryParams from '../utils/getQueryString';
-import SearchForm from '../components/SearchForm';
+import { getSearchMovies, } from '../../services/movieApi';
+import getQueryParams from '../../utils/getQueryString';
+import SearchForm from '../../components/searchForm/SearchForm';
+import { Ul } from './styledMoviePages';
 
 
 export default class MoviesPage extends Component {
@@ -53,16 +54,16 @@ export default class MoviesPage extends Component {
                 <SearchForm onSubmit={this.handgeChangeQuery} />
                 {
                     movies.length > 0 &&
-                    <ul>
+                    <Ul>
                         {movies.map((mov) => {
-                            return <li key={mov.id}>
-                                <Link to={{ pathname: `${match.url}/${mov.id}`, state: { from: this.props.location } }}>
+                            return <li key={mov.id} className="moviePageItem">
+                                <Link to={{ pathname: `${match.url}/${mov.id}`, state: { from: this.props.location } }} className="moviePageLink">
                                     {mov.title}
                                 </Link>
                             </li>
                         })}
 
-                    </ul>
+                    </Ul>
                 }
 
             </div>

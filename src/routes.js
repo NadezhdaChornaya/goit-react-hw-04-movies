@@ -14,7 +14,7 @@ const routesPages = [
         name: "Movies",
         exact: true,
         component: lazy(() =>
-            import("./pages/MoviesPage" /* webpackChunkName: "MoviesPage"*/)
+            import("./pages/moviePages/MoviesPage" /* webpackChunkName: "MoviesPage"*/)
         )
     },
 ]
@@ -39,7 +39,7 @@ const routesInnerPages = [
         exact: false,
         component: lazy(() =>
             import(
-                "./pages/innerMovieDetails/Cast" /* webpackChunkName: "Cast"*/
+                "./pages/innerMovieDetails/cast/Cast" /* webpackChunkName: "Cast"*/
             )
         ),
     },
@@ -49,7 +49,7 @@ const routesInnerPages = [
         exact: false,
         component: lazy(() =>
             import(
-                "./pages/innerMovieDetails/Reviews" /* webpackChunkName: "Reviews"*/
+                "./pages/innerMovieDetails/reviews/Reviews" /* webpackChunkName: "Reviews"*/
             )
         ),
     },
