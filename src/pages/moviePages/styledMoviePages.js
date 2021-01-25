@@ -20,7 +20,9 @@ text-align:center;
         font-size: 20px;
         text-decoration: none;
         &:hover,&:focus{
-        color: #51a9fc;
+        color: #fafc6d;
         text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #ffffff;
+}
+  &:visited{color: #51a9fc;}
 }
 `

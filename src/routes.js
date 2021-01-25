@@ -1,5 +1,6 @@
 import { lazy } from "react";
 
+
 const routesPages = [
     {
         path: "/",
@@ -7,7 +8,8 @@ const routesPages = [
         exact: true,
         component: lazy(() =>
             import("./pages/homePage/HomePage" /* webpackChunkName: "HomePage"*/)
-        )
+        ),
+
     },
     {
         path: "/movies",

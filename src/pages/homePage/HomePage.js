@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { getPopularList, imgPoster } from '../../services/movieApi';
+import { getPopularList, imgCast } from '../../services/movieApi';
 import { HomePageWrapper } from './styledHomePage';
 
 export default class HomePage extends Component {
@@ -24,15 +24,14 @@ export default class HomePage extends Component {
                 <ul className="homePageList">
                     {popularDayMovies.map((popMovie) => (
                         <li key={popMovie.id} className="homePageItem">
-                            {popMovie.profile_path && (
-                                <img
-                                    src={imgPoster + popMovie.poster_path}
-                                    alt={popMovie.title}
-                                />
-                            )}
-                            <Link to={{ pathname: `/movies/${popMovie.id}` }} className="navigation-link">
 
-                                {popMovie.title} ({popMovie.release_date})
+                            <Link to={{ pathname: `/movies/${popMovie.id}` }} className="navigation-link">
+                                {popMovie.poster_path &&
+                                    <img src={imgCast + popMovie.poster_path} alt={popMovie.title}
+                                        className="homePagePoster" />}
+                                {popMovie.title}
+                                <br />
+                                ({popMovie.release_date})
 
                             </Link>
 

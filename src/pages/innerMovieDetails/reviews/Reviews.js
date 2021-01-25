@@ -16,9 +16,8 @@ export default class Reviews extends Component {
                     reviews: reviews,
                 });
             })
-            .catch(error => {
-                this.setState({ error });
-            });
+            .catch(error => alert(error));
+
     }
 
     render() {
@@ -27,17 +26,18 @@ export default class Reviews extends Component {
             <ReviewsWrapper>
                 <h1 className="reviewTitle">Reviews</h1>
 
-                {reviews.length > 0 && reviews.result.length > 0 ?
-                    (<ul>
-                        {reviews.results.map((review) => (
-                        <li key={review.id}>
-                            <h2>{review.author}</h2>
-                            <p>{review.content}</p>
-                            <p>Created at: {review.created_at}</p>
+                {reviews ?
+                    (<ul className="reviewList">
+                    {reviews.map((review) => (
+                        <li key={review.id} className="reviewItem">
+                            <h2 className="reviewAuthor">Author: {review.author}</h2>
+                            <p className="reviewText">{review.content}</p>
+                            <p className="reviewCreated">Created at: {review.created_at}</p>
                         </li>
                     ))}
-                    </ul>
-                    ) :(
+                </ul>
+                    )
+                : (
         <p className="reviewText"> We don't have any reviews for this movie.</p>
       )}
 

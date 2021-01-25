@@ -2,13 +2,14 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { routesPages } from '../../routes';
 import { NavigationWrapper } from './styledNavigation';
+// import sprite from "../../img/sptite.svg"
 
 
 const Navigation = () => {
     return (
         <NavigationWrapper>
             {/* <svg>
-                <use href="sprite.svg#icon-LOGO" width="20"></use >
+                <use href="" ></use >
             </svg > */}
             <h1 className="navigationTitle">The Movie DB</h1>
             <ul className="navigationList">

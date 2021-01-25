@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const DetailsMovieWrapper = styled.div`
-/* padding:-30px; */
+
 .detailsMovieButton{
     display: block;
     margin:20px auto;
@@ -25,33 +25,44 @@ export const DetailsMovieWrapper = styled.div`
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);}
     }
     .detailsMovieBlock{
+        display: flex;
+        padding: 20px;
         width: 80vw;
         margin: 20px auto;
         border: 1px solid #fafc6d;
         box-shadow: 0 0 10px #ffffff;
     }
+    .detailsMovieInfoBlock{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+    }
     .detailsMoviePoster{
         text-align: center;
+        margin-right: 20px;
     }
     .detailsMovieTitle{
-        text-align: center;
+    text-align: center;
     font-weight: 500;
     color: #fafc6d;
     text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #51a9fc;
     }
     .detailsTagline, .detailsRuntime{
-        text-align: center;
+    text-align: center;
     font: inherit;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
     color: #c0fcee;
     }
     .detailsOverView, .detailsPopularity{
-           text-align: center;
+    text-align: center;
     font: inherit;
     font-size: 20px;
     font-weight: 300;
     color: #ffffff;
+    }
+    .detailsPopularity{
+        font-weight: 500;
     }
     .moreDetailsWrapper{
         padding: 30px;

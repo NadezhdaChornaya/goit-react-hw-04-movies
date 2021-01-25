@@ -34,12 +34,17 @@ export default class MovieDetailsPage extends Component {
                 {this.state.movie &&
                     <>
                         <div className="detailsMovieBlock">
-                            {movie.poster_path && <img scr={imgPoster + movie.poster_path} alt={movie.title} className="detailsMoviePoster" />}
-                            <h1 className="detailsMovieTitle">{movie.title} ({movie.release_date})</h1>
-                            <h2 className="detailsPopularity">Popularity: {movie.popularity}</h2>
-                            <p className="detailsTagline">{movie.tagline}</p>
-                            <p className="detailsOverView">{movie.overview}</p>
-                            <p className="detailsRuntime">Runtime: {movie.runtime} min</p>
+
+                            {movie.poster_path &&
+                                <img src={imgPoster + movie.poster_path} alt={movie.title}
+                                    className="detailsMoviePoster" />}
+                            <div className="detailsMovieInfoBlock">
+                                <h1 className="detailsMovieTitle">{movie.title} ({movie.release_date})</h1>
+                                <h2 className="detailsPopularity">Popularity: {movie.vote_average}</h2>
+                                <p className="detailsTagline">{movie.tagline}</p>
+                                <p className="detailsOverView">{movie.overview}</p>
+                                <p className="detailsRuntime">Runtime: {movie.runtime} min</p>
+                            </div>
                         </div>
                         <div className="moreDetailsWrapper">
                             <p className="moreDetailsTitle">Additional information</p>
