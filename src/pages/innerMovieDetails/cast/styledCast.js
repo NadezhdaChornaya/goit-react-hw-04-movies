@@ -33,4 +33,10 @@ margin-right: 20px;
 .castCharacter{
 font-size: 20px;
 }
+.castText{
+      font-weight: 300;
+    font-size: 20px;
+    text-align:center;
+    color: #ffffff;
+}
 `

@@ -24,30 +24,25 @@ export default class Cast extends Component {
         return (
             <CastWrapper>
                 <h1 className="castTitle">Cast</h1>
-                <ul className="castList">
-                    {castMovie && castMovie.cast && castMovie.cast.map((actorInfo) => (
-                        <li key={actorInfo.id} className="castItem">
-                            {actorInfo.profile_path && (
-                                <img
-                                    src={imgCast + actorInfo.profile_path}
-                                    alt={actorInfo.name}
-                                />
-                            )}
-                            <h3 className="castName">{actorInfo.name}</h3>
-                            <p className="castCharacter">The character: {actorInfo.character}</p>
-                        </li>
-                    )
-                    )}
-                </ul>
-                {/* <h2>Crew</h2>
-                <ul>
-                    {castMovie && castMovie.crew && castMovie.crew.map((crewInfo) => (
-                        <li key={crewInfo.id}>
-                            <h3>{crewInfo.name}</h3>
-                            <p>Job: {crewInfo.job}</p>
-                        </li>
-                    ))}
-                </ul> */}
+                {castMovie.lengs > 0 ?
+                    (<ul className="castList">
+                        {castMovie && castMovie.cast && castMovie.cast.map((actorInfo) => (
+                            <li key={actorInfo.id} className="castItem">
+                                {actorInfo.profile_path && (
+                                    <img
+                                        src={imgCast + actorInfo.profile_path}
+                                        alt={actorInfo.name}
+                                    />
+                                )}
+                                <h3 className="castName">{actorInfo.name}</h3>
+                                <p className="castCharacter">The character: {actorInfo.character}</p>
+                            </li>
+                        )
+                        )}
+                    </ul>) : (
+                        <p className="castText"> We don't have any info about actors for this movie.</p>
+                )}
+
             </CastWrapper>
         )
     }
