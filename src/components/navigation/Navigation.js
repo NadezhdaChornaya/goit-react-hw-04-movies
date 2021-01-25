@@ -8,10 +8,11 @@ import { NavigationWrapper } from './styledNavigation';
 const Navigation = () => {
     return (
         <NavigationWrapper>
-            {/* <svg>
-                <use href="" ></use >
-            </svg > */}
-            <h1 className="navigationTitle">The Movie DB</h1>
+
+            {/* <svg >
+                <use href="#icon-video-camera" />
+            </svg> */}
+            <h1 className="navigationTitle"><span>&#127916;</span>The Best Movies<span>&#127916;</span></h1>
             <ul className="navigationList">
                 {routesPages.map(({ path, name, exact }) => (
                     <li key={path} className="navigationItem">

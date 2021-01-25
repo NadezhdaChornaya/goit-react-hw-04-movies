@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 
 export const Ul = styled.ul`
+display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 list-style: none;
 text-align:center;
 .moviePageItem{
     margin: 20px auto;
-     width: 50vw;
+     width: 400px;
      padding: 10px;
      border: 1px solid #fafc6d;
      border-radius: 10px;
@@ -24,5 +27,9 @@ text-align:center;
         text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #ffffff;
 }
   &:visited{color: #51a9fc;}
+}
+.moviePagePoster{
+    margin: 20px auto;
+    width: 300px;
 }
 `

@@ -18,6 +18,7 @@ export const HomePageWrapper = styled.div`
    
     width: 400px;
      padding: 10px;
+     margin-right: 20px;
      margin-bottom: 20px;
      border: 4px solid #fafc6d;
      border-radius: 10px;
@@ -27,12 +28,12 @@ export const HomePageWrapper = styled.div`
         box-shadow: 0 0 20px #fafc6d;
     }
 }
-.homePageItem:not(:nth-child(3n+3)){
+/* .homePageItem:not(:nth-child(3n+3)){
 margin-right: 20px;
 }
 .homePageItem:not(:nth-last-child(n+2)){
     margin-bottom: 20px;
-}
+} */
 .homePagePoster{
     margin: 20px auto;
     width: 300px;

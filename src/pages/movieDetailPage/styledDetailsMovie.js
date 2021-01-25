@@ -65,21 +65,33 @@ export const DetailsMovieWrapper = styled.div`
         font-weight: 500;
     }
     .moreDetailsWrapper{
-        padding: 30px;
+        padding: 20px;
         background-color:#301d6b;
     }
 
     .moreDetailsTitle{
-    font-weight: 500;
-    font-size: 20px;
-    color: #fafc6d;
-    text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #51a9fc;
+        margin-top:0;
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 30px;
+        text-align:center;
+        color: #fafc6d;
+        text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #51a9fc;
     }
-
+.moreDetailsLinkWrap{
+    display: flex;
+    justify-content: center
+}
     .moreDetailsLink{
+     padding: 5px;
+     min-width: 150px;
+    text-decoration: none;
+    text-align: center;
+        
+        font-size: 30px;
+        border: 1px solid #fafc6d;
+        border-radius: 50px;
         color: #51a9fc;
-        font-size: 20px;
-        text-decoration: none;
         &:hover,&:focus{
         color: #ffffff;
         text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #ffffff;

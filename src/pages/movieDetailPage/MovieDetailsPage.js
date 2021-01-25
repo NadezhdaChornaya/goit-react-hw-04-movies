@@ -16,6 +16,14 @@ export default class MovieDetailsPage extends Component {
                 this.setState({ movie: movie }))
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        window.scrollBy({
+            top: document.documentElement.offsetHeight,
+            behavior: 'smooth'
+        })
+    }
+
+
     handleGoBack = () => {
         const { state } = this.props.location;
         if (state && state.from) {
@@ -48,13 +56,15 @@ export default class MovieDetailsPage extends Component {
                         </div>
                         <div className="moreDetailsWrapper">
                             <p className="moreDetailsTitle">Additional information</p>
-                            <Link to={`${match.url}/${movie.id}/cast`} className="moreDetailsLink">
-                                Cast
-                    </Link>
+                            <div className="moreDetailsLinkWrap">
+                                <Link to={`${match.url}/${movie.id}/cast`} className="moreDetailsLink">
+                                    Cast
+                            </Link>
 
-                            <Link to={{ pathname: `${match.url}/${movie.id}/reviews` }} className="moreDetailsLink">
-                                Reviews
-                    </Link>
+                                <Link to={{ pathname: `${match.url}/${movie.id}/reviews` }} className="moreDetailsLink">
+                                    Reviews
+                            </Link>
+                            </div>
                         </div>
                     </>}
                 <Suspense fallback={<Spinner />}>

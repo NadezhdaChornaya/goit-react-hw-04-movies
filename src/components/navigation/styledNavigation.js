@@ -8,9 +8,6 @@ align-items:center;
 background-color: #2d2642;
 .navigation-link{
 text-decoration: none;
-.navigation-link-active{
-    color: #51a9fc;
-}
 font: inherit;
     font-size: 30px;
     font-weight: 700;
@@ -21,6 +18,9 @@ font: inherit;
         color: #51a9fc;
         text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #ffffff;
     }
+}
+.navigation-link-active{
+    color:#fafc6d;
 }
 
 .navigationList{
@@ -33,7 +33,12 @@ font: inherit;
     margin-right: 20px;
 }
 .navigationTitle{
-     color: #51a9fc;
+     color: transparent;
+     -webkit-text-stroke: 1px #fafc6d;
      text-shadow: 1px 1px 2px #2F4F4F, 0 0 1em #ffffff;
 }
+SVG {
+  width: 100px;
+  height: 100px;
+  fill: #ffffff;}
 `

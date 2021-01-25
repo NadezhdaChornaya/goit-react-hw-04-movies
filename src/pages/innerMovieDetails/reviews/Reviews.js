@@ -26,7 +26,7 @@ export default class Reviews extends Component {
             <ReviewsWrapper>
                 <h1 className="reviewTitle">Reviews</h1>
 
-                {reviews ?
+                {reviews.lengs>0 ?
                     (<ul className="reviewList">
                     {reviews.map((review) => (
                         <li key={review.id} className="reviewItem">
